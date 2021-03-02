@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
     /// <summary>
     /// Deal damage on monster collision, or disappear on wall collision.
     /// </summary>
-    /// <param name="collision"></param> Object, the bullet collides with.
+    /// <param name="collision"></param> Object the bullet collides with.
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
