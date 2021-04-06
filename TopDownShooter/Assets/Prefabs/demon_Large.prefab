@@ -49,6 +49,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -152,6 +154,8 @@ MonoBehaviour:
   col: {fileID: 8373777519732863507}
   rr: {fileID: 8373777519732863504}
   explosionPrefab: {fileID: 4414460088469958162, guid: b0aa9d0cbf0b66f42aa90b58657b0fe2,
+    type: 3}
+  ammoDropPrefab: {fileID: 2190837940161029712, guid: 310afa09bc1e23644871cb7c3645887e,
     type: 3}
 --- !u!50 &9057671839221929586
 Rigidbody2D:

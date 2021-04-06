@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class Bullet : MonoBehaviour
 {
-
+    public int damage = 5;
     public GameObject bloodSplatPrefab;
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<Enemy>().hitPoints -= 5;
+            collision.gameObject.GetComponent<Enemy>().hitPoints -= damage;
             Instantiate(bloodSplatPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }

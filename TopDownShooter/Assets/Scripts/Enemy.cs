@@ -18,16 +18,21 @@ public class Enemy : MonoBehaviour
     public Renderer rr;
     bool noScore;
     public GameObject explosionPrefab;
+    public GameObject ammoDropPrefab;
 
     private void Start()
     {
+        
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rb = this.GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
         if (hitPoints <= 0)
+        {
+            
             Death();
+        }
         if (!isDead)
         {
             FollowPlayer();
@@ -38,15 +43,23 @@ public class Enemy : MonoBehaviour
     void Death()
     {
         if (isDead == false)
+        {
             animator.SetTrigger("isDead");
+            
+        }
         isDead = true;
         Destroy(col);
         Destroy(rb);
         rr.sortingOrder = -1;
         if (noScore == false)
         {
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<Game_Manager>().finalScore += points;
+            if (Random.Range(1, 10) <= 2)
+            {
+                Instantiate(ammoDropPrefab, this.transform.position, this.transform.rotation);
+            }
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().finalScore += points;
             noScore = true;
+            FindObjectOfType<AudioManager>().Play("Demon Dying");
         }
     }
     void FollowPlayer()
@@ -73,6 +86,7 @@ public class Enemy : MonoBehaviour
         noScore = true;
         Instantiate(explosionPrefab, transform.position, transform.rotation);
         player.gameObject.GetComponent<Player>().healthPoints -= damage;
+        FindObjectOfType<AudioManager>().Play("Demon Explosion");
         Death();
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayAgain : MonoBehaviour
 {
-    public Game_Manager gManager;
+    public GameManager gManager;
     public GameObject gameOver;
 
 

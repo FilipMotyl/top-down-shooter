@@ -49,6 +49,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -143,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5f5a5f62e6ebe4b9237d1041a1dfdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
   bloodSplatPrefab: {fileID: 4667203680170946893, guid: 298dcf86aaa8ad54dbdc0c3d58421c90,
     type: 3}
 --- !u!1 &4625527779950862125
@@ -191,6 +194,8 @@ TrailRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
